@@ -1,0 +1,9 @@
+<ul class="list-group mb-3">
+    <li (click)="insertarPais(pais.translations.spa.common)" *ngFor="let pais of paises | slice :55:64" class="list-group-item d-flex justify-content-between lh-condensed">
+        <div >
+        <button  class="btn-pais">
+            <h6 class="my-0">{{pais.translations.spa.common}} <img class="img-pais" [src]="pais.flags.svg"></h6>
+        </button>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,9 @@
+<li *ngFor="let pelicula of peliculas">
+    ID: {{pelicula.id}}<br>
+    Nombre: {{pelicula.nombre}}<br>
+    Tipo: {{pelicula.tipo}}<br>
+    Fecha de estreno: {{pelicula.fechaDeEstreno}}<br>
+    Cantidad de público: {{pelicula.cantidadDePublico}}<br>
+    Foto: {{pelicula.fotoDeLaPelicula}}
+    <button (click)="obtenerDetalles(pelicula)" class="btn btn-primary">Ver Detalle</button>
+</li>

@@ -1,0 +1,14 @@
+.img-pais
+{
+  width: 30px;
+}
+
+.btn-pais
+{
+background-color: transparent;
+border: none;
+}
+
+li{
+  cursor:pointer;
+}

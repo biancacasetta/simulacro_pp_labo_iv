@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Fecha de estreno</th>
+            <th>Cantidad de público</th>
+            <th>Foto de la película</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pelicula of peliculas">
+            <td>{{pelicula.id}}</td>
+            <td>{{pelicula.nombre}}</td>
+            <td>{{pelicula.tipo}}</td>
+            <td>{{pelicula.fechaDeEstreno}}</td>
+            <td>{{pelicula.cantidadDePublico}}</td>
+            <td><img [src]="pelicula.fotoDeLaPelicula" alt="foto"></td>
+            <button (click)="obtenerDetalles(pelicula)" class="btn btn-primary">Ver Detalle</button>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,87 @@
+<body class="bg-light">
+  <br><br>
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="../../../../assets/clapperboard.png" alt="" width="72" height="72">
+    <h2>Alta de Actor</h2>
+    <p class="lead">Complete el formulario para dar de alta a un actor.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Seleccione un país</span>
+      </h4>
+      <app-tabla-paises (pais)="obtenerPais($event)"></app-tabla-paises>
+
+    </div>
+    <div class="col-md-8 order-md-1">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre(s)</label>
+            <input type="text" class="form-control" id="nombre" required [(ngModel)]="nuevoActor.nombre">
+            <div class="invalid-feedback">
+              El nombre es obligatorio.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="apellido">Apellido(s)</label>
+            <input type="text" class="form-control" id="apellido" required [(ngModel)]="nuevoActor.apellido">
+            <div class="invalid-feedback">
+              El apellido es obligatorio.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="genero">Género</label>
+          <div class="row">
+              <div class="form-check col-md-6">
+                <input type="radio" class="form-check-input" id="femenino" value="femenino" name="genero" [(ngModel)]="nuevoActor.genero">
+                <label for="femenino" class="form-check-label">
+                    Femenino
+                </label>
+              </div>
+              <div class="form-check col-md-6">
+                  <input type="radio" class="form-check-input" id="masculino" value="masculino" name="genero" [(ngModel)]="nuevoActor.genero">
+                <label for="masculino" class="form-check-label">
+                    Masculino
+                </label>
+              </div>
+              <div class="invalid-feedback">
+                Seleccione un género.
+              </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="edad">Edad</label>
+          <input type="number" class="form-control" id="edad" required [(ngModel)]="nuevoActor.edad">
+          <div class="invalid-feedback">
+            Ingrese una edad válida.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="pais">País</label>
+            <input type="text" class="form-control" id="pais" placeholder="Seleccione un país del listado →" readonly required [value]="paisInsertado" [(ngModel)]="nuevoActor.pais">
+            <div class="invalid-feedback">
+              Seleccione un país válido.
+            </div>
+          </div>
+        </div>
+
+        <div class="foto" class="mb-3">
+          <label for="foto">Foto</label>
+          <input type="text" class="form-control" id="foto" required [(ngModel)]="nuevoActor.foto">
+          <div class="invalid-feedback">
+            Ingrese una foto válida.
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="guardar()">Dar de alta</button>
+    </div>
+  </div>
+</div>
+
